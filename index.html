@@ -14,8 +14,15 @@
       line-height: 1.6;
       color: #333;
       background: #fafafa;
-      text-align: justify;             /* Justify all text */
-      -moz-text-align-last: left;      /* Keep last line left-aligned in Firefox */
+      text-align: justify;
+      -moz-text-align-last: left;
+      text-align-last: left;
+    }
+    /* Ensure all paragraphs and list items are justified */
+    section p,
+    section li {
+      text-align: justify;
+      -moz-text-align-last: left;
       text-align-last: left;
     }
 
@@ -177,10 +184,8 @@
     <section id="contact">
       <h2>Contact</h2>
       <p>
-        Connect with me on
-        <a href="https://www.linkedin.com/in/ayodejibabalola/">LinkedIn</a>
-        or email at
-        <a href="mailto:ayodeji.sb@gmail.com">ayodeji.sb@gmail.com</a>.
+        Connect with me on <a href="https://www.linkedin.com/in/ayodejibabalola/">LinkedIn</a>
+        or email at <a href="mailto:ayodeji.sb@gmail.com">ayodeji.sb@gmail.com</a>.
       </p>
     </section>
   </div>

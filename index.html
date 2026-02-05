@@ -1,197 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayodeji Sunday Babalola</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayodeji Sunday Babalola (Ayo) — Hardware • Systems • Test Engineering</title>
+  <meta name="description" content="Hardware, systems & test engineering. Post-silicon validation, PCB bring-up, firmware/interface testing, and applied R&D prototyping." />
   <style>
-    /* Base */
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #333;
-      background: #fafafa;
-      text-align: justify;
-      -moz-text-align-last: left;
-      text-align-last: left;
-    }
-    /* Ensure all paragraphs and list items are justified */
-    section p,
-    section li {
-      text-align: justify;
-      -moz-text-align-last: left;
-      text-align-last: left;
-    }
-
-    a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
-    header {
-      background: #ffffff;
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: -0.5px;
-      color: #222;
-    }
-    header .roles {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: #555;
-      font-style: italic;
-    }
-
-    /* Container & Sections */
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      background: #ffffff;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    section h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 0.3rem;
-      color: #444;
-    }
-
-    /* Lists */
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      margin-bottom: 0.75rem;
-      padding-left: 1.25rem;
-      position: relative;
-    }
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #0073e6;
-      font-size: 1.2rem;
-      line-height: 1;
-      top: 0.2rem;
-    }
-    ul li strong { color: #222; }
-
-    /* Contact & Footer */
-    #contact p {
-      margin: 0.5rem 0 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-      padding: 1.5rem 0;
-    }
+    :root { --max: 980px; --pad: 22px; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height: 1.55; color: #111; background: #fff; }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.2); }
+    a:hover { border-bottom-color: rgba(0,0,0,.6); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 48px var(--pad); }
+    .top { display: grid; grid-template-columns: 1fr; gap: 18px; padding-bottom: 26px; border-bottom: 1px solid #eee; }
+    .kicker { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: #444; }
+    h1 { margin: 0; font-size: 44px; line-height: 1.1; }
+    .subtitle { font-size: 18px; color: #222; max-width: 70ch; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .btn { display: inline-block; padding: 10px 14px; border: 1px solid #111; border-radius: 10px; font-weight: 600; }
+    .btn.secondary { border-color: #ddd; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+    @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { border: 1px solid #eee; border-radius: 16px; padding: 18px; }
+    .card h2 { margin: 0 0 10px; font-size: 18px; }
+    ul { margin: 10px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 22px; }
+    .muted { color: #555; }
+    .footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid #eee; font-size: 14px; color: #555; }
+    .pillrow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .pill { font-size: 13px; border: 1px solid #eee; padding: 6px 10px; border-radius: 999px; color: #333; }
+    .small { font-size: 14px; }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Ayodeji Sunday Babalola</h1>
-    <p class="roles">Tech Consultancy Expert | Product Engineer | Staff Data Engineer</p>
-  </header>
+  <main class="wrap">
 
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Dynamic engineering leader with deep expertise in building and scaling data platforms, combined
-        with hands-on product development and systems validation across med-tech, sustainable energy,
-        and photonics. Passionate about driving data-driven decisions, mentoring high-performing teams,
-        and delivering robust, enterprise-grade solutions.
-      </p>
+    <header class="top">
+      <div class="kicker">Hardware • Systems • Test Engineering • Applied R&D</div>
+      <h1>Ayodeji Sunday Babalola (Ayo)</h1>
+      <div class="subtitle">
+        I work on real hardware systems — from post-silicon validation and PCB bring-up to firmware/interface testing and experimental prototyping.
+        My focus is turning complex physical systems into measurable, testable, and deployable products.
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="mailto:ayodeji.sb@gmail.com">Email</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/ayodejibabalola" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/AyodejiBaba" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="pillrow">
+        <span class="pill">Post-silicon validation</span>
+        <span class="pill">PCB bring-up & fault isolation</span>
+        <span class="pill">Firmware & interface testing</span>
+        <span class="pill">Python tooling & automation</span>
+        <span class="pill">Measurement-driven prototyping</span>
+      </div>
+    </header>
+
+    <section class="grid section">
+      <div class="card">
+        <h2>Proof of Work</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/AyodejiBaba/technical-portfolio-hardware-systems" target="_blank" rel="noopener">
+              Hardware & Systems Portfolio (project-based)
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/AyodejiBaba/lv-energy/tree/main/strategy" target="_blank" rel="noopener">
+              LV Energy — Strategy & Technical Direction
+            </a>
+          </li>
+        </ul>
+        <p class="muted small" style="margin-top:12px;">
+          Some work is NDA-bound; this portfolio focuses on system context, test strategy, tools, and outcomes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Services</h2>
+        <ul>
+          <li>Hardware validation planning (test strategy, coverage, pass/fail criteria)</li>
+          <li>Electronics & PCB bring-up support (debug, fault isolation, repeatable tests)</li>
+          <li>Firmware/interface testing (UART/SPI/I2C) + Python test tooling</li>
+          <li>Experimental prototyping and measurement workflows for applied R&D</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="expertise">
-      <h2>Expertise</h2>
-      <ul>
-        <li><strong>Data Engineering & Architecture</strong>: ETL pipelines, data modeling, metadata &amp; lineage</li>
-        <li><strong>Cloud & Big Data</strong>: AWS (Redshift, S3, Lambda), GCP (BigQuery, Dataflow), Snowflake, Databricks</li>
-        <li><strong>Streaming &amp; Orchestration</strong>: Apache Spark, Kafka, Airflow, dbt, Terraform</li>
-        <li><strong>DevOps &amp; Observability</strong>: Docker, Kubernetes, CI/CD (Jenkins, GitHub Actions), Great Expectations</li>
-        <li><strong>Product Development &amp; Validation</strong>: FDA-compliant devices, ambient-noise-to-electricity prototypes, laser instrumentation</li>
-      </ul>
+    <section class="section">
+      <h2>How I Work</h2>
+      <div class="card">
+        <ul>
+          <li><b>Measurement first:</b> quantify the system before making design claims.</li>
+          <li><b>Repeatability:</b> tests should run the same way across revisions and environments.</li>
+          <li><b>Average power over peaks:</b> engineering decisions based on usable performance.</li>
+          <li><b>Clear reporting:</b> results that stakeholders can act on quickly.</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="experience">
-      <h2>Professional Experience</h2>
-      <ul>
-        <li>
-          <strong>Staff Data Engineer</strong> <em>(May 2024 – Present)</em><br/>
-          Architected and implemented scalable data platforms processing petabytes of batch and
-          real-time data. Led design reviews, established best practices for data modeling,
-          governance, and quality checks, and drove adoption of a modern data stack.<br/>
-          <em>Tools:</em> Python, SQL, Apache Spark, Kafka, Airflow, dbt, AWS, GCP, Snowflake, Databricks, Terraform, Kubernetes, Docker, Jenkins, GitHub Actions, Great Expectations
-        </li>
-        <li>
-          <strong>Sound-to-Energy Product Development Engineer</strong> <em>(Feb 2024 – Present)</em><br/>
-          Developed an ambient-noise-to-electricity prototype to advance sustainable energy harvesting
-          methods and aligned R&amp;D milestones with company vision.<br/>
-          <em>Tools:</em> Python, Audio DSP, MATLAB, Test Validation
-        </li>
-        <li>
-          <strong>Product Engineer, Audio Quality for Medical Devices</strong> <em>(Feb 2023 – Feb 2024)</em><br/>
-          Led audio validation for the FDA-approved Keikku device, ensuring global compliance and
-          performance. Coordinated with QA, regulatory, and clinical teams to uphold medical-grade
-          standards.<br/>
-          <em>Tools:</em> Machine Learning, AI, Python, Audio DSP, Quality Assurance
-        </li>
-        <li>
-          <strong>Systems Engineer, MEMS Clock IC Validation</strong> <em>(Jan 2022 – Feb 2024)</em><br/>
-          Executed comprehensive validation for MEMS clock ICs deployed in Apple and Tesla
-          products and established new office operations for high-throughput testing.<br/>
-          <em>Tools:</em> MATLAB, Python, DSP, Test Validation
-        </li>
-        <li>
-          <strong>Product Engineer, Laser Instruments</strong> <em>(Jan 2020 – Jan 2022)</em><br/>
-          Engineered laser triangulation sensors and vibrometers for precision industrial monitoring
-          and collaborated on photonics research for structural-health solutions.<br/>
-          <em>Tools:</em> Photonics, MATLAB, Optical Communication
-        </li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Highlighted Projects</h2>
-      <ul>
-        <li><a href="https://github.com/AyodejiBaba">Explore my GitHub repositories →</a></li>
-      </ul>
-    </section>
-
-    <section id="contact">
+    <section class="section">
       <h2>Contact</h2>
-      <p>
-        Connect with me on <a href="https://www.linkedin.com/in/ayodejibabalola/">LinkedIn</a>
-        or email at <a href="mailto:ayodeji.sb@gmail.com">ayodeji.sb@gmail.com</a>.
-      </p>
+      <div class="card">
+        <p style="margin:0;">
+          Email: <a href="mailto:ayodeji.sb@gmail.com">ayodeji.sb@gmail.com</a><br/>
+          LinkedIn: <a href="https://www.linkedin.com/in/ayodejibabalola" target="_blank" rel="noopener">/in/ayodejibabalola</a><br/>
+          GitHub: <a href="https://github.com/AyodejiBaba" target="_blank" rel="noopener">github.com/AyodejiBaba</a>
+        </p>
+      </div>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 Ayodeji Sunday Babalola</p>
-  </footer>
+    <footer class="footer">
+      © <span id="y"></span> Ayodeji Sunday Babalola • Built on GitHub Pages
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
